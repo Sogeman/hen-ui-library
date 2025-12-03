@@ -67,7 +67,7 @@
       "name": "badge",
       "type": "registry:component",
       "description": "A badge component for status indicators",
-      "registryDependencies": ["theme"],
+      "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
@@ -80,7 +80,7 @@
       "name": "button",
       "type": "registry:component",
       "description": "A customizable button component with variants and sizes",
-      "registryDependencies": ["theme"],
+      "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
@@ -93,7 +93,7 @@
       "name": "card",
       "type": "registry:component",
       "description": "A card component for displaying content",
-      "registryDependencies": ["theme"],
+      "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
@@ -131,7 +131,7 @@
       "name": "input",
       "type": "registry:component",
       "description": "An input component with label and error states",
-      "registryDependencies": ["theme"],
+      "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
@@ -144,7 +144,7 @@
       "name": "grid",
       "type": "registry:component",
       "description": "A flexible grid layout component with responsive columns and gaps",
-      "registryDependencies": ["theme"],
+      "registryDependencies": [],
       "dependencies": [],
       "files": [
         {
