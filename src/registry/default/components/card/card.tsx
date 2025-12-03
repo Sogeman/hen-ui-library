@@ -1,9 +1,9 @@
+import { CardDescription } from "@/components/ui/card/components/card-description";
+import { CardFooter } from "@/components/ui/card/components/card-footer";
+import { CardHeader } from "@/components/ui/card/components/card-header";
+import { CardTitle } from "@/components/ui/card/components/card-title";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
-import { CardDescription } from "./components/card-description";
-import { CardFooter } from "./components/card-footer";
-import { CardHeader } from "./components/card-header";
-import { CardTitle } from "./components/card-title";
 
 export interface CardProps {
   children?: ReactNode;
