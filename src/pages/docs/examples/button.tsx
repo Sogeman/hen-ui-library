@@ -19,12 +19,13 @@ export const buttonExample = {
         </div>
         <div className="flex gap-2">
           <Button disabled>Disabled</Button>
-          <Button size="icon">
+          <Button size="icon" aria-label="Add item">
             <svg
               className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -71,8 +72,7 @@ export default function Example() {
   props: [
     {
       name: "variant",
-      type:
-        "'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'",
+      type: "'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'",
       description: "Visual style variant",
     },
     {
@@ -84,4 +84,3 @@ export default function Example() {
     { name: "onClick", type: "() => void", description: "Click handler" },
   ],
 };
-

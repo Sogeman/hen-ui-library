@@ -24,6 +24,7 @@ export default function CopyButton({ text }: CopyButtonProps) {
       onClick={handleCopy}
       type="button"
       className="absolute top-2 right-2 inline-flex items-center justify-center gap-2 h-9 rounded-md px-3 text-sm font-medium transition-colors border border-border hover:border-foreground bg-background/50 hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
+      aria-label={copied ? "Copied to clipboard" : "Copy to clipboard"}
     >
       {copied ? (
         <>
@@ -32,6 +33,7 @@ export default function CopyButton({ text }: CopyButtonProps) {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -49,6 +51,7 @@ export default function CopyButton({ text }: CopyButtonProps) {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"

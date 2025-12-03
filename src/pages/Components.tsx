@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button/button";
 import { Link } from "react-router-dom";
 import registryData from "../../registry.json";
 
@@ -21,18 +20,21 @@ export default function Components() {
           {components.map((component) => (
             <div
               key={component.name}
-              className="border rounded-lg p-6 space-y-2 hover:shadow-lg transition-shadow"
+              className="border rounded-lg p-6 space-y-2 hover:shadow-lg transition-shadow flex flex-col gap-3 justify-between items-start"
             >
-              <h3 className="text-xl font-semibold capitalize">
-                {component.name}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {component.description}
-              </p>
-              <Link to={`/docs/${component.name}`}>
-                <Button size="sm" variant="outline">
-                  View Details
-                </Button>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-xl font-semibold capitalize">
+                  {component.name}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {component.description}
+                </p>
+              </div>
+              <Link
+                to={`/docs/${component.name}`}
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 h-9 px-3 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+              >
+                View Details
               </Link>
             </div>
           ))}

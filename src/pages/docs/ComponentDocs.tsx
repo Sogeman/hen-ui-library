@@ -130,9 +130,9 @@ export default function ComponentDocs() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-3 px-4 font-semibold">Prop</th>
-                    <th className="text-left py-3 px-4 font-semibold">Type</th>
-                    <th className="text-left py-3 px-4 font-semibold">
+                    <th scope="col" className="text-left py-3 px-4 font-semibold">Prop</th>
+                    <th scope="col" className="text-left py-3 px-4 font-semibold">Type</th>
+                    <th scope="col" className="text-left py-3 px-4 font-semibold">
                       Description
                     </th>
                   </tr>
