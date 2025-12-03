@@ -4,9 +4,11 @@ import Components from "./pages/Components";
 import ComponentDocs from "./pages/docs/ComponentDocs";
 import Home from "./pages/Home";
 
+const basename = import.meta.env.BASE_URL || "/";
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
