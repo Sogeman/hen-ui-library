@@ -21,13 +21,12 @@
             var redirectPath = decodeURIComponent(query.split("?redirect=")[1]);
             // Extract the base path from current pathname (e.g., /hen-ui-library/)
             var pathSegmentsToKeep = 1;
-            var basePath =
-              window.location.pathname
-                .split("/")
-                .slice(0, 1 + pathSegmentsToKeep)
-                .join("/") + "/";
-            // Prepend base path to the redirect path
-            var fullPath = basePath.slice(0, -1) + redirectPath;
+            var basePath = window.location.pathname
+              .split("/")
+              .slice(0, 1 + pathSegmentsToKeep)
+              .join("/");
+            // Prepend base path to the redirect path (redirectPath already has leading slash)
+            var fullPath = basePath + redirectPath;
             history.replaceState(null, null, fullPath);
           }
         }
