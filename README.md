@@ -1,73 +1,175 @@
-# React + TypeScript + Vite
+# Hen UI Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collection of accessible and customizable React components built with TypeScript and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## React Compiler
+Make sure you have a React project set up with Tailwind CSS v4+ configured.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Installing Components
 
-## Expanding the ESLint configuration
+You can install components using the shadcn CLI:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Installing the Theme
+
+The theme provides CSS custom properties for colors and other design tokens. All components depend on the theme, so it will be automatically installed when you add your first component.
+
+To install the theme separately:
+
+```bash
+npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json theme
+```
+
+This will:
+1. Add the `theme.css` file to your project
+2. Include the necessary Tailwind config for color tokens
+3. Set up CSS custom properties for light and dark modes
+
+#### Manual Theme Setup
+
+If you prefer to set it up manually, add this to your CSS:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Light Mode */
+  --color-border: hsl(214.3 31.8% 91.4%);
+  --color-input: hsl(214.3 31.8% 91.4%);
+  --color-ring: hsl(181, 48%, 39%);
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(222.2 84% 4.9%);
+  --color-primary: hsl(181, 48%, 39%);
+  --color-primary-hover: hsl(181, 49%, 29%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  /* ... more colors */
+}
+
+:root.dark {
+  /* Dark mode colors */
+  --color-background: hsl(222.2 84% 4.9%);
+  --color-foreground: hsl(210 40% 98%);
+  /* ... more dark mode colors */
+}
+```
+
+And update your `tailwind.config.js`:
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+export default {
+  theme: {
+    extend: {
+      colors: {
+        border: "hsl(var(--color-border))",
+        input: "hsl(var(--color-input))",
+        ring: "hsl(var(--color-ring))",
+        background: "hsl(var(--color-background))",
+        foreground: "hsl(var(--color-foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--color-primary))",
+          foreground: "hsl(var(--color-primary-foreground))",
+          hover: "hsl(var(--color-primary-hover))"
+        },
+        // ... more color tokens
+      }
+    }
+  }
+}
 ```
+
+## Available Components
+
+### Button
+A customizable button component with multiple variants and sizes.
+
+```bash
+npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json button
+```
+
+**Variants:** default, destructive, outline, secondary, ghost, link  
+**Sizes:** default, sm, lg, icon
+
+### Card
+A flexible card component with header, title, description, content, and footer sub-components.
+
+```bash
+npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json card
+```
+
+### Input
+An input component with label and error states.
+
+```bash
+npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json input
+```
+
+### Badge
+A badge component for status indicators and tags.
+
+```bash
+npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json badge
+```
+
+### Grid
+A flexible grid layout component with responsive columns and gaps.
+
+```bash
+npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json grid
+```
+
+## Customization
+
+### Colors
+
+All components use CSS custom properties, making it easy to customize colors. Simply override the CSS variables in your own stylesheet:
+
+```css
+@theme {
+  --color-primary: hsl(200, 100%, 50%); /* Your custom primary color */
+  --color-primary-hover: hsl(200, 100%, 40%);
+}
+```
+
+### Dark Mode
+
+Dark mode is enabled via the `.dark` class on the root element. The theme automatically switches colors when this class is present:
+
+```tsx
+// Toggle dark mode
+document.documentElement.classList.toggle('dark');
+```
+
+## Development
+
+This project uses:
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS v4** for styling
+- **React Router** for documentation site navigation
+
+### Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## License
+
+MIT
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.

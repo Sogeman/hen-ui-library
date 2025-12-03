@@ -4,10 +4,70 @@
   "homepage": "https://sogeman.github.io/hen-ui-library",
   "items": [
     {
+      "name": "theme",
+      "type": "registry:style",
+      "description": "Color theme with CSS custom properties for light and dark modes",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/default/styles/theme.css",
+          "type": "registry:style",
+          "target": "styles/theme.css"
+        }
+      ],
+      "tailwind": {
+        "config": {
+          "theme": {
+            "extend": {
+              "colors": {
+                "border": "hsl(var(--color-border))",
+                "input": "hsl(var(--color-input))",
+                "ring": "hsl(var(--color-ring))",
+                "background": "hsl(var(--color-background))",
+                "foreground": "hsl(var(--color-foreground))",
+                "primary": {
+                  "DEFAULT": "hsl(var(--color-primary))",
+                  "foreground": "hsl(var(--color-primary-foreground))",
+                  "hover": "hsl(var(--color-primary-hover))"
+                },
+                "secondary": {
+                  "DEFAULT": "hsl(var(--color-secondary))",
+                  "foreground": "hsl(var(--color-secondary-foreground))"
+                },
+                "destructive": {
+                  "DEFAULT": "hsl(var(--color-destructive))",
+                  "foreground": "hsl(var(--color-destructive-foreground))"
+                },
+                "muted": {
+                  "DEFAULT": "hsl(var(--color-muted))",
+                  "foreground": "hsl(var(--color-muted-foreground))"
+                },
+                "accent": {
+                  "DEFAULT": "hsl(var(--color-accent))",
+                  "foreground": "hsl(var(--color-accent-foreground))"
+                },
+                "card": {
+                  "DEFAULT": "hsl(var(--color-card))",
+                  "foreground": "hsl(var(--color-card-foreground))"
+                }
+              },
+              "borderRadius": {
+                "lg": "var(--radius-lg)",
+                "md": "var(--radius-md)",
+                "sm": "var(--radius-sm)",
+                "xl": "var(--radius-xl)"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
       "name": "badge",
       "type": "registry:component",
       "description": "A badge component for status indicators",
-      "registryDependencies": [],
+      "registryDependencies": ["theme"],
       "dependencies": [],
       "files": [
         {
@@ -20,7 +80,7 @@
       "name": "button",
       "type": "registry:component",
       "description": "A customizable button component with variants and sizes",
-      "registryDependencies": [],
+      "registryDependencies": ["theme"],
       "dependencies": [],
       "files": [
         {
@@ -33,7 +93,7 @@
       "name": "card",
       "type": "registry:component",
       "description": "A card component for displaying content",
-      "registryDependencies": [],
+      "registryDependencies": ["theme"],
       "dependencies": [],
       "files": [
         {
@@ -71,7 +131,7 @@
       "name": "input",
       "type": "registry:component",
       "description": "An input component with label and error states",
-      "registryDependencies": [],
+      "registryDependencies": ["theme"],
       "dependencies": [],
       "files": [
         {
@@ -84,7 +144,7 @@
       "name": "grid",
       "type": "registry:component",
       "description": "A flexible grid layout component with responsive columns and gaps",
-      "registryDependencies": [],
+      "registryDependencies": ["theme"],
       "dependencies": [],
       "files": [
         {
