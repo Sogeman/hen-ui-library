@@ -98,7 +98,8 @@
       "files": [
         {
           "path": "src/registry/new-york/components/card/card.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
         },
         {
           "path": "src/registry/new-york/components/card/components/card-header.tsx",
