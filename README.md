@@ -27,6 +27,7 @@ npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json t
 ```
 
 This will:
+
 1. Add the `theme.css` file to your project
 2. Include the necessary Tailwind config for color tokens
 3. Set up CSS custom properties for light and dark modes
@@ -38,23 +39,34 @@ If you prefer to set it up manually, add this to your CSS:
 ```css
 @import "tailwindcss";
 
-@theme {
-  /* Colors - Light Mode */
-  --color-border: hsl(214.3 31.8% 91.4%);
-  --color-input: hsl(214.3 31.8% 91.4%);
-  --color-ring: hsl(181, 48%, 39%);
-  --color-background: hsl(0 0% 100%);
-  --color-foreground: hsl(222.2 84% 4.9%);
-  --color-primary: hsl(181, 48%, 39%);
-  --color-primary-hover: hsl(181, 49%, 29%);
-  --color-primary-foreground: hsl(0 0% 100%);
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.606 0.215 196.119);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.606 0.215 196.119);
   /* ... more colors */
 }
 
-:root.dark {
-  /* Dark mode colors */
-  --color-background: hsl(222.2 84% 4.9%);
-  --color-foreground: hsl(210 40% 98%);
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.606 0.215 196.119);
+  --primary-foreground: oklch(0.205 0 0);
   /* ... more dark mode colors */
 }
 ```
@@ -66,26 +78,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--color-border))",
-        input: "hsl(var(--color-input))",
-        ring: "hsl(var(--color-ring))",
-        background: "hsl(var(--color-background))",
-        foreground: "hsl(var(--color-foreground))",
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "hsl(var(--color-primary))",
-          foreground: "hsl(var(--color-primary-foreground))",
-          hover: "hsl(var(--color-primary-hover))"
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
         },
         // ... more color tokens
-      }
-    }
-  }
-}
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+    },
+  },
+};
 ```
 
 ## Available Components
 
 ### Button
+
 A customizable button component with multiple variants and sizes.
 
 ```bash
@@ -96,6 +117,7 @@ npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json b
 **Sizes:** default, sm, lg, icon
 
 ### Card
+
 A flexible card component with header, title, description, content, and footer sub-components.
 
 ```bash
@@ -103,6 +125,7 @@ npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json c
 ```
 
 ### Input
+
 An input component with label and error states.
 
 ```bash
@@ -110,6 +133,7 @@ npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json i
 ```
 
 ### Badge
+
 A badge component for status indicators and tags.
 
 ```bash
@@ -117,6 +141,7 @@ npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json b
 ```
 
 ### Grid
+
 A flexible grid layout component with responsive columns and gaps.
 
 ```bash
@@ -130,11 +155,13 @@ npx shadcn@latest add https://sogeman.github.io/hen-ui-library/r/registry.json g
 All components use CSS custom properties, making it easy to customize colors. Simply override the CSS variables in your own stylesheet:
 
 ```css
-@theme {
-  --color-primary: hsl(200, 100%, 50%); /* Your custom primary color */
-  --color-primary-hover: hsl(200, 100%, 40%);
+:root {
+  --primary: oklch(0.7 0.2 220); /* Your custom primary color */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
 }
 ```
+
+You can use any valid CSS color format (OKLCH, HSL, RGB, hex, etc.).
 
 ### Dark Mode
 
@@ -142,12 +169,13 @@ Dark mode is enabled via the `.dark` class on the root element. The theme automa
 
 ```tsx
 // Toggle dark mode
-document.documentElement.classList.toggle('dark');
+document.documentElement.classList.toggle("dark");
 ```
 
 ## Development
 
 This project uses:
+
 - **React 18** with TypeScript
 - **Vite** for fast development and building
 - **Tailwind CSS v4** for styling
