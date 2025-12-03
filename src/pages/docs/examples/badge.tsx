@@ -1,4 +1,4 @@
-import { Badge } from "../../../registry/default/components/badge/badge";
+import { Badge } from "../../../registry/new-york/components/badge/badge";
 
 export const badgeExample = {
   preview: () => (

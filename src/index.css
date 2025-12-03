@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import "./registry/default/styles/theme.css";
+@import "./registry/new-york/styles/theme.css";
 
 pre {
   position: relative;

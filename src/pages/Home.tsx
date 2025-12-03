@@ -1,6 +1,6 @@
-import { Badge } from "../registry/default/components/badge/badge";
-import { Button } from "../registry/default/components/button/button";
-import { Card } from "../registry/default/components/card/card";
+import { Badge } from "../registry/new-york/components/badge/badge";
+import { Button } from "../registry/new-york/components/button/button";
+import { Card } from "../registry/new-york/components/card/card";
 
 export default function Home() {
   return (

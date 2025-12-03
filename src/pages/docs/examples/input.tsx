@@ -1,7 +1,7 @@
 import {
   Input,
   Label,
-} from "../../../registry/default/components/input/input";
+} from "../../../registry/new-york/components/input/input";
 
 export const inputExample = {
   preview: () => (
@@ -42,11 +42,7 @@ export default function Example() {
   codePreview: () => (
     <div className="space-y-2">
       <Label htmlFor="email">Email</Label>
-      <Input
-        id="email"
-        type="email"
-        placeholder="email@example.com"
-      />
+      <Input id="email" type="email" placeholder="email@example.com" />
     </div>
   ),
   usage: `<div className="space-y-2">
@@ -70,4 +66,3 @@ export default function Example() {
     { name: "error", type: "boolean", description: "Show error state" },
   ],
 };
-

@@ -1,4 +1,4 @@
-import { Button } from "../../../registry/default/components/button/button";
+import { Button } from "../../../registry/new-york/components/button/button";
 
 export const buttonExample = {
   preview: () => (

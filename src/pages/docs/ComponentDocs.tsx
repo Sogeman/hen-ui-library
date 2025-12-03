@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import registryData from "../../../registry.json";
 import { CodeBlock } from "../../components/CodeBlock";
-import { Card } from "../../registry/default/components/card/card";
+import { Card } from "../../registry/new-york/components/card/card";
 import { badgeExample } from "./examples/badge";
 import { buttonExample } from "./examples/button";
 import { cardExample } from "./examples/card";

@@ -1,8 +1,8 @@
-import { CardDescription } from "@/components/ui/card/components/card-description";
-import { CardFooter } from "@/components/ui/card/components/card-footer";
-import { CardHeader } from "@/components/ui/card/components/card-header";
-import { CardTitle } from "@/components/ui/card/components/card-title";
 import { cn } from "@/lib/utils";
+import { CardDescription } from "@/registry/new-york/components/card/components/card-description";
+import { CardFooter } from "@/registry/new-york/components/card/components/card-footer";
+import { CardHeader } from "@/registry/new-york/components/card/components/card-header";
+import { CardTitle } from "@/registry/new-york/components/card/components/card-title";
 import type { ReactNode } from "react";
 
 export interface CardProps {
@@ -44,3 +44,9 @@ export function Card({
     </div>
   );
 }
+
+export { CardContent } from "@/registry/new-york/components/card/components/card-content";
+export { CardDescription } from "@/registry/new-york/components/card/components/card-description";
+export { CardFooter } from "@/registry/new-york/components/card/components/card-footer";
+export { CardHeader } from "@/registry/new-york/components/card/components/card-header";
+export { CardTitle } from "@/registry/new-york/components/card/components/card-title";

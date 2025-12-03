@@ -11,7 +11,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/registry/default/styles/theme.css",
+          "path": "src/registry/new-york/styles/theme.css",
           "type": "registry:style",
           "target": "styles/theme.css"
         }
@@ -71,7 +71,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/registry/default/components/badge/badge.tsx",
+          "path": "src/registry/new-york/components/badge/badge.tsx",
           "type": "registry:ui"
         }
       ]
@@ -84,7 +84,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/registry/default/components/button/button.tsx",
+          "path": "src/registry/new-york/components/button/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -97,31 +97,31 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/registry/default/components/card/card.tsx",
+          "path": "src/registry/new-york/components/card/card.tsx",
           "type": "registry:ui"
         },
         {
-          "path": "src/registry/default/components/card/components/card-header.tsx",
+          "path": "src/registry/new-york/components/card/components/card-header.tsx",
           "type": "registry:ui",
           "target": "components/ui/card/components/card-header.tsx"
         },
         {
-          "path": "src/registry/default/components/card/components/card-title.tsx",
+          "path": "src/registry/new-york/components/card/components/card-title.tsx",
           "type": "registry:ui",
           "target": "components/ui/card/components/card-title.tsx"
         },
         {
-          "path": "src/registry/default/components/card/components/card-description.tsx",
+          "path": "src/registry/new-york/components/card/components/card-description.tsx",
           "type": "registry:ui",
           "target": "components/ui/card/components/card-description.tsx"
         },
         {
-          "path": "src/registry/default/components/card/components/card-content.tsx",
+          "path": "src/registry/new-york/components/card/components/card-content.tsx",
           "type": "registry:ui",
           "target": "components/ui/card/components/card-content.tsx"
         },
         {
-          "path": "src/registry/default/components/card/components/card-footer.tsx",
+          "path": "src/registry/new-york/components/card/components/card-footer.tsx",
           "type": "registry:ui",
           "target": "components/ui/card/components/card-footer.tsx"
         }
@@ -135,7 +135,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/registry/default/components/input/input.tsx",
+          "path": "src/registry/new-york/components/input/input.tsx",
           "type": "registry:ui"
         }
       ]
@@ -148,7 +148,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/registry/default/components/grid/grid.tsx",
+          "path": "src/registry/new-york/components/grid/grid.tsx",
           "type": "registry:ui"
         }
       ]

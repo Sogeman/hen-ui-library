@@ -10,7 +10,7 @@ export default defineConfig({
     alias: {
       "@/components/ui": path.resolve(
         __dirname,
-        "./src/registry/default/components"
+        "./src/registry/new-york/components"
       ),
       "@/lib": path.resolve(__dirname, "./src/lib"),
       "@": path.resolve(__dirname, "./src"),

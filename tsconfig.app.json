@@ -27,7 +27,7 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "@/components/ui/*": ["./src/registry/default/components/*"],
+      "@/components/ui/*": ["src/registry/new-york/components/*"],
       "@/lib/utils": ["./src/lib/utils"],
       "@/*": ["./src/*"]
     }

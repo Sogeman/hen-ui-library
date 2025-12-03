@@ -1,10 +1,10 @@
-import { Button } from "../../../registry/default/components/button/button";
-import { Card } from "../../../registry/default/components/card/card";
-import { CardContent } from "../../../registry/default/components/card/components/card-content";
-import { CardDescription } from "../../../registry/default/components/card/components/card-description";
-import { CardFooter } from "../../../registry/default/components/card/components/card-footer";
-import { CardHeader } from "../../../registry/default/components/card/components/card-header";
-import { CardTitle } from "../../../registry/default/components/card/components/card-title";
+import { Button } from "../../../registry/new-york/components/button/button";
+import { Card } from "../../../registry/new-york/components/card/card";
+import { CardContent } from "../../../registry/new-york/components/card/components/card-content";
+import { CardDescription } from "../../../registry/new-york/components/card/components/card-description";
+import { CardFooter } from "../../../registry/new-york/components/card/components/card-footer";
+import { CardHeader } from "../../../registry/new-york/components/card/components/card-header";
+import { CardTitle } from "../../../registry/new-york/components/card/components/card-title";
 
 export const cardExample = {
   preview: () => (

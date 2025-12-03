@@ -1,5 +1,5 @@
-import { Card } from "../../../registry/default/components/card/card";
-import { Grid } from "../../../registry/default/components/grid/grid";
+import { Card } from "../../../registry/new-york/components/card/card";
+import { Grid } from "../../../registry/new-york/components/grid/grid";
 
 export const gridExample = {
   preview: () => (
