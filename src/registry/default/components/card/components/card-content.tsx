@@ -3,11 +3,11 @@ import type { ReactNode } from "react";
 
 export interface CardContentProps {
   children?: ReactNode;
-  class?: string;
+  className?: string;
 }
 
 export function CardContent({
-  class: className,
+  className,
   children,
   ...props
 }: CardContentProps) {
@@ -17,4 +17,3 @@ export function CardContent({
     </div>
   );
 }
-

@@ -1,9 +1,9 @@
-import type { InputHTMLAttributes, LabelHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
+import type { InputHTMLAttributes, LabelHTMLAttributes } from "react";
 
 export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
-  class?: string;
+  className?: string;
   type?: string;
   placeholder?: string;
   disabled?: boolean;
@@ -11,7 +11,7 @@ export interface InputProps
 }
 
 export function Input({
-  class: className,
+  className,
   type = "text",
   error,
   ...props
@@ -30,11 +30,11 @@ export function Input({
 }
 
 export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
-  class?: string;
+  className?: string;
   htmlFor?: string;
 }
 
-export function Label({ class: className, ...props }: LabelProps) {
+export function Label({ className, ...props }: LabelProps) {
   return (
     <label
       className={cn(

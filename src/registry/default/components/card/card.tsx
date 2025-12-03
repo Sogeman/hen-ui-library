@@ -7,14 +7,14 @@ import type { ReactNode } from "react";
 
 export interface CardProps {
   children?: ReactNode;
-  class?: string;
+  className?: string;
   title?: string;
   description?: string;
   footer?: ReactNode;
 }
 
 export function Card({
-  class: className,
+  className,
   children,
   title,
   description,

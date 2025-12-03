@@ -1,5 +1,5 @@
-import { Grid } from "../../../registry/default/components/grid/grid";
 import { Card } from "../../../registry/default/components/card/card";
+import { Grid } from "../../../registry/default/components/grid/grid";
 
 export const gridExample = {
   preview: () => (
@@ -10,21 +10,21 @@ export const gridExample = {
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <Card
               key={i}
-              class="p-6 flex items-center justify-center bg-muted"
+              className="p-6 flex items-center justify-center bg-muted"
             >
               <span className="text-lg font-semibold">Item {i}</span>
             </Card>
           ))}
         </Grid>
       </div>
-      
+
       <div>
         <h3 className="text-sm font-medium mb-4">Fixed 4 Columns</h3>
         <Grid cols={4} responsive={false}>
           {[1, 2, 3, 4].map((i) => (
             <Card
               key={i}
-              class="p-6 flex items-center justify-center bg-muted"
+              className="p-6 flex items-center justify-center bg-muted"
             >
               <span className="text-lg font-semibold">Item {i}</span>
             </Card>
@@ -41,7 +41,7 @@ export const gridExample = {
               {[1, 2, 3].map((i) => (
                 <Card
                   key={i}
-                  class="p-4 flex items-center justify-center bg-muted"
+                  className="p-4 flex items-center justify-center bg-muted"
                 >
                   <span className="font-semibold">Item {i}</span>
                 </Card>
@@ -54,7 +54,7 @@ export const gridExample = {
               {[1, 2, 3].map((i) => (
                 <Card
                   key={i}
-                  class="p-4 flex items-center justify-center bg-muted"
+                  className="p-4 flex items-center justify-center bg-muted"
                 >
                   <span className="font-semibold">Item {i}</span>
                 </Card>
@@ -83,11 +83,7 @@ export default function Example() {
   codePreview: () => (
     <Grid cols={3} gap="md">
       {[1, 2, 3, 4, 5, 6].map((i) => (
-        <Card
-          key={i}
-          title={`Card ${i}`}
-          class="bg-muted"
-        >
+        <Card key={i} title={`Card ${i}`} className="bg-muted">
           Content for card {i}
         </Card>
       ))}
@@ -101,10 +97,7 @@ export default function Example() {
   usagePreview: () => (
     <Grid cols={3} gap="md" responsive={true}>
       {[1, 2, 3].map((i) => (
-        <Card
-          key={i}
-          class="p-6 flex items-center justify-center bg-muted"
-        >
+        <Card key={i} className="p-6 flex items-center justify-center bg-muted">
           <span className="font-semibold">Item {i}</span>
         </Card>
       ))}
@@ -114,7 +107,8 @@ export default function Example() {
     {
       name: "cols",
       type: "1 | 2 | 3 | 4 | 5 | 6 | 12",
-      description: "Number of columns in the grid (ignored if responsive is true)",
+      description:
+        "Number of columns in the grid (ignored if responsive is true)",
     },
     {
       name: "gap",
@@ -124,7 +118,8 @@ export default function Example() {
     {
       name: "responsive",
       type: "boolean",
-      description: "Enable responsive breakpoints (1 col on mobile, 2 on tablet, 3 on desktop)",
+      description:
+        "Enable responsive breakpoints (1 col on mobile, 2 on tablet, 3 on desktop)",
     },
     {
       name: "class",
@@ -133,4 +128,3 @@ export default function Example() {
     },
   ],
 };
-

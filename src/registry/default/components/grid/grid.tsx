@@ -1,9 +1,9 @@
-import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 
 export interface GridProps {
   children?: ReactNode;
-  class?: string;
+  className?: string;
   cols?: 1 | 2 | 3 | 4 | 5 | 6 | 12;
   gap?: "none" | "sm" | "md" | "lg" | "xl";
   responsive?: boolean;
@@ -30,7 +30,7 @@ const gridVariants = {
 
 export function Grid({
   children,
-  class: className,
+  className,
   cols = 3,
   gap = "md",
   responsive = true,
@@ -54,4 +54,3 @@ export function Grid({
     </div>
   );
 }
-

@@ -3,14 +3,10 @@ import type { ReactNode } from "react";
 
 export interface CardTitleProps {
   children?: ReactNode;
-  class?: string;
+  className?: string;
 }
 
-export function CardTitle({
-  class: className,
-  children,
-  ...props
-}: CardTitleProps) {
+export function CardTitle({ className, children, ...props }: CardTitleProps) {
   return (
     <h3
       className={cn(
@@ -23,4 +19,3 @@ export function CardTitle({
     </h3>
   );
 }
-

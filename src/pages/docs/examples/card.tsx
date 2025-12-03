@@ -125,6 +125,10 @@ export default function AdvancedCard() {
       type: "ComponentChildren",
       description: "Card footer (optional)",
     },
-    { name: "class", type: "string", description: "Additional CSS classes" },
+    {
+      name: "className",
+      type: "string",
+      description: "Additional CSS classes",
+    },
   ],
 };

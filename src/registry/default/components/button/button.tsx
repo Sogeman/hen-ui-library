@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 
 export interface ButtonProps {
   id?: string;
@@ -14,7 +14,7 @@ export interface ButtonProps {
     | "ghost"
     | "link";
   size?: "default" | "sm" | "lg" | "icon";
-  class?: string;
+  className?: string;
 }
 
 const buttonVariants = {
@@ -39,7 +39,7 @@ const buttonVariants = {
 export function Button({
   variant = "default",
   size = "default",
-  class: className,
+  className,
   disabled,
   onClick,
   children,
