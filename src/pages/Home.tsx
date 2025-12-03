@@ -51,10 +51,6 @@ export default function Home() {
               npx shadcn@latest add
               https://ui-library.sogeman.deno.net/r/button.json
             </div>
-            <div className="mt-4 mb-2 text-muted-foreground">
-              # Update all components to latest version
-            </div>
-            <div>npx shadcn@latest add -a -y -o</div>
           </div>
         </Card>
       </div>

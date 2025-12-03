@@ -1,35 +1,34 @@
 import { cn } from "@/lib/utils";
-import type { ReactNode } from "react";
-
-export interface BadgeProps {
-  children?: ReactNode;
-  variant?: "default" | "secondary" | "destructive" | "outline";
-  className?: string;
-}
+import * as React from "react";
 
 const badgeVariants = {
-  default: "border-transparent bg-primary text-primary-foreground",
-  secondary: "border-transparent bg-secondary text-secondary-foreground",
-  destructive: "border-transparent bg-destructive text-destructive-foreground",
-  outline: "text-foreground",
-};
+  default:
+    "border-transparent bg-primary text-primary-foreground hover:bg-primary/90",
+  secondary:
+    "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/90",
+  destructive:
+    "border-transparent bg-destructive text-white hover:bg-destructive/90",
+  outline: "text-foreground hover:bg-accent hover:text-accent-foreground",
+} as const;
 
-export function Badge({
-  children,
-  variant = "default",
-  className,
-  ...props
-}: BadgeProps) {
+export type BadgeVariant = keyof typeof badgeVariants;
+
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+  variant?: BadgeVariant;
+}
+
+function Badge({ className, variant = "default", ...props }: BadgeProps) {
   return (
-    <div
+    <span
       className={cn(
-        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold",
+        "inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 transition-colors",
         badgeVariants[variant],
         className
       )}
       {...props}
-    >
-      {children}
-    </div>
+    />
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export { Badge, badgeVariants };
