@@ -5,6 +5,7 @@ import ComponentDocs from "./pages/docs/ComponentDocs";
 import Home from "./pages/Home";
 
 const basename = import.meta.env.BASE_URL || "/";
+console.log("App basename:", basename, "BASE_URL:", import.meta.env.BASE_URL);
 
 function App() {
   return (
