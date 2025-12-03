@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "UI Library",
-  "homepage": "https://sogeman.github.io/hen-ui-library/",
+  "homepage": "https://sogeman.github.io/hen-ui-library",
   "items": [
     {
       "name": "badge",
