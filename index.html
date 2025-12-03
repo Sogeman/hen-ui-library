@@ -19,7 +19,16 @@
           var query = window.location.search;
           if (query && query.indexOf("?redirect=") !== -1) {
             var redirectPath = decodeURIComponent(query.split("?redirect=")[1]);
-            history.replaceState(null, null, redirectPath);
+            // Extract the base path from current pathname (e.g., /hen-ui-library/)
+            var pathSegmentsToKeep = 1;
+            var basePath =
+              window.location.pathname
+                .split("/")
+                .slice(0, 1 + pathSegmentsToKeep)
+                .join("/") + "/";
+            // Prepend base path to the redirect path
+            var fullPath = basePath.slice(0, -1) + redirectPath;
+            history.replaceState(null, null, fullPath);
           }
         }
       })();
