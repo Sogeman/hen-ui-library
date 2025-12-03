@@ -5,6 +5,7 @@ import { Card } from "../../registry/default/components/card/card";
 import { badgeExample } from "./examples/badge";
 import { buttonExample } from "./examples/button";
 import { cardExample } from "./examples/card";
+import { gridExample } from "./examples/grid";
 import { inputExample } from "./examples/input";
 
 interface RegistryItem {
@@ -31,6 +32,7 @@ const componentExamples: Record<
   button: buttonExample,
   badge: badgeExample,
   card: cardExample,
+  grid: gridExample,
   input: inputExample,
 };
 
@@ -130,9 +132,22 @@ export default function ComponentDocs() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th scope="col" className="text-left py-3 px-4 font-semibold">Prop</th>
-                    <th scope="col" className="text-left py-3 px-4 font-semibold">Type</th>
-                    <th scope="col" className="text-left py-3 px-4 font-semibold">
+                    <th
+                      scope="col"
+                      className="text-left py-3 px-4 font-semibold"
+                    >
+                      Prop
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-left py-3 px-4 font-semibold"
+                    >
+                      Type
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-left py-3 px-4 font-semibold"
+                    >
                       Description
                     </th>
                   </tr>

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "UI Library",
-  "homepage": "dunno",
+  "homepage": "https://sogeman.github.io/hen-ui-library/",
   "items": [
     {
       "name": "badge",
@@ -51,6 +51,19 @@
       "files": [
         {
           "path": "src/registry/default/components/input/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "grid",
+      "type": "registry:component",
+      "description": "A flexible grid layout component with responsive columns and gaps",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/default/components/grid/grid.tsx",
           "type": "registry:ui"
         }
       ]
