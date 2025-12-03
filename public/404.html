@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages SPA redirect solution
+      // This script captures the current path and redirects to index.html
+      // with the path encoded in the query string
+      (function() {
+        var pathSegmentsToKeep = 1; // For base path like /hen-ui-library/
+        
+        var l = window.location;
+        var path = l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/';
+        
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          path + '?redirect=' + encodeURIComponent(l.pathname.slice(path.length - 1) + l.search + l.hash)
+        );
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+
