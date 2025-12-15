@@ -10,6 +10,7 @@ interface MenuContextValue {
   setAnchorEl: (el: HTMLElement | null) => void;
   anchorOrigin?: AnchorOrigin;
   transformOrigin?: TransformOrigin;
+  closeMenuScrollThreshold: number;
 }
 
 const MenuContext = React.createContext<MenuContextValue | undefined>(
@@ -41,6 +42,7 @@ export interface MenuProps {
   onOpenChange?: (open: boolean) => void;
   anchorOrigin?: AnchorOrigin;
   transformOrigin?: TransformOrigin;
+  closeMenuScrollThreshold?: number;
 }
 
 export interface MenuTriggerProps
@@ -68,6 +70,7 @@ function Menu({
   onOpenChange,
   anchorOrigin = { vertical: "bottom", horizontal: "right" },
   transformOrigin = { vertical: "top", horizontal: "right" },
+  closeMenuScrollThreshold = 50,
 }: MenuProps) {
   const [internalOpen, setInternalOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
@@ -92,8 +95,16 @@ function Menu({
       setAnchorEl,
       anchorOrigin,
       transformOrigin,
+      closeMenuScrollThreshold,
     }),
-    [open, setOpen, anchorEl, anchorOrigin, transformOrigin]
+    [
+      open,
+      setOpen,
+      anchorEl,
+      anchorOrigin,
+      transformOrigin,
+      closeMenuScrollThreshold,
+    ]
   );
 
   return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;
@@ -137,13 +148,20 @@ MenuTrigger.displayName = "MenuTrigger";
 // Menu Content Component
 const MenuContent = React.forwardRef<HTMLDivElement, MenuContentProps>(
   ({ children, className, ...props }, ref) => {
-    const { open, setOpen, anchorEl, anchorOrigin, transformOrigin } =
-      useMenu();
+    const {
+      open,
+      setOpen,
+      anchorEl,
+      anchorOrigin,
+      transformOrigin,
+      closeMenuScrollThreshold,
+    } = useMenu();
     const contentRef = React.useRef<HTMLDivElement>(null);
     const [position, setPosition] = React.useState<{
       top: number;
       left: number;
     } | null>(null);
+    const [scrollOffset, setScrollOffset] = React.useState({ x: 0, y: 0 });
     const [isPositioned, setIsPositioned] = React.useState(false);
     const [renderKey, setRenderKey] = React.useState(0);
 
@@ -319,6 +337,7 @@ const MenuContent = React.forwardRef<HTMLDivElement, MenuContentProps>(
       if (!open) {
         setIsPositioned(false);
         setPosition(null);
+        setScrollOffset({ x: 0, y: 0 });
         setRenderKey(0);
       }
     }, [open]);
@@ -358,12 +377,29 @@ const MenuContent = React.forwardRef<HTMLDivElement, MenuContentProps>(
       return () => document.removeEventListener("keydown", handleEscape);
     }, [open, setOpen]);
 
-    // Handle scroll - close menu when scrolling
+    // Handle scroll - move menu with button until threshold, then close
     React.useEffect(() => {
       if (!open) return;
 
+      const scrollThreshold = closeMenuScrollThreshold;
+      const initialScrollY = window.scrollY;
+      const initialScrollX = window.scrollX;
+
       const handleScroll = () => {
-        setOpen(false);
+        const currentScrollY = window.scrollY;
+        const currentScrollX = window.scrollX;
+        const deltaY = currentScrollY - initialScrollY;
+        const deltaX = currentScrollX - initialScrollX;
+        const scrollDistance = Math.sqrt(
+          Math.pow(deltaY, 2) + Math.pow(deltaX, 2)
+        );
+
+        if (scrollDistance > scrollThreshold) {
+          setOpen(false);
+        } else {
+          // Move menu opposite to scroll direction to stay attached to button
+          setScrollOffset({ x: -deltaX, y: -deltaY });
+        }
       };
 
       // Listen for scroll on window and all scrollable ancestors
@@ -395,8 +431,8 @@ const MenuContent = React.forwardRef<HTMLDivElement, MenuContentProps>(
           style={
             position
               ? {
-                  top: `${position.top}px`,
-                  left: `${position.left}px`,
+                  top: `${position.top + scrollOffset.y}px`,
+                  left: `${position.left + scrollOffset.x}px`,
                 }
               : {
                   top: 0,
