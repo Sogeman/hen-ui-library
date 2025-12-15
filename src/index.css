@@ -72,3 +72,18 @@ aside::-webkit-scrollbar-thumb:hover {
   clip: auto;
   white-space: normal;
 }
+
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+.content-auto-small {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 100px;
+}
+
+.content-auto-large {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}

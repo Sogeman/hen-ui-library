@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mb-16">
+      <div className="mb-16 content-auto">
         <h2 className="text-3xl font-bold mb-4">Installation</h2>
         <p className="text-muted-foreground mb-6">
           Install components using the shadcn CLI pointing to this registry.
@@ -55,7 +55,7 @@ export default function Home() {
         </Card>
       </div>
 
-      <div>
+      <div className="content-auto">
         <h2 className="text-3xl font-bold mb-4">Component Preview</h2>
         <p className="text-muted-foreground mb-6">
           Browse all available components in the sidebar.

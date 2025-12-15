@@ -20,7 +20,7 @@ export default function Components() {
           {components.map((component) => (
             <div
               key={component.name}
-              className="border rounded-lg p-6 space-y-2 hover:shadow-lg transition-shadow flex flex-col gap-3 justify-between items-start"
+              className="border rounded-lg p-6 space-y-2 hover:shadow-lg transition-shadow flex flex-col gap-3 justify-between items-start content-auto-small"
             >
               <div className="flex flex-col gap-2">
                 <h3 className="text-xl font-semibold capitalize">

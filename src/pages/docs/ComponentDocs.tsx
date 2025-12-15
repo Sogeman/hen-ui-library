@@ -61,7 +61,7 @@ function PreviewSection({ example }: { example: ComponentExample }) {
   const hasVariants = example.variants && example.previewWithVariant;
 
   return (
-    <section className="mb-12">
+    <section className="mb-12 content-auto">
       <h2 className="text-2xl font-bold mb-4">Preview</h2>
       {hasVariants && (
         <div className="flex items-center justify-end gap-2 mb-2">
@@ -132,7 +132,7 @@ export default function ComponentDocs() {
       </div>
 
       {/* Installation */}
-      <section className="mb-12">
+      <section className="mb-12 content-auto-small">
         <h2 className="text-2xl font-bold mb-4">Installation</h2>
         <Card>
           <CodeBlock code={installCommand} language="bash" />
@@ -143,7 +143,7 @@ export default function ComponentDocs() {
       <PreviewSection example={example} />
 
       {/* Example Code */}
-      <section className="mb-12">
+      <section className="mb-12 content-auto-large">
         <h2 className="text-2xl font-bold mb-4">Example</h2>
         <Card>
           <div className="space-y-4">
@@ -166,7 +166,7 @@ export default function ComponentDocs() {
       </section>
 
       {/* Usage */}
-      <section className="mb-12">
+      <section className="mb-12 content-auto">
         <h2 className="text-2xl font-bold mb-4">Usage</h2>
         <Card>
           <CodeBlock code={example.usage} />
@@ -175,7 +175,7 @@ export default function ComponentDocs() {
 
       {/* Props */}
       {example.props && (
-        <section className="mb-12">
+        <section className="mb-12 content-auto">
           <h2 className="text-2xl font-bold mb-4">Props</h2>
           <Card>
             <div className="overflow-x-auto">

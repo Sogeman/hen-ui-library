@@ -110,7 +110,7 @@ export function Sidebar({ currentPath }: SidebarProps) {
           </div>
 
           {uiComponents.length > 0 && (
-            <div className="mb-6">
+            <div className="mb-6 content-auto-small">
               <div
                 className="mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 role="heading"
@@ -125,7 +125,7 @@ export function Sidebar({ currentPath }: SidebarProps) {
           )}
 
           {formComponentsList.length > 0 && (
-            <div className="mb-6">
+            <div className="mb-6 content-auto-small">
               <div
                 className="mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 role="heading"
@@ -140,7 +140,7 @@ export function Sidebar({ currentPath }: SidebarProps) {
           )}
 
           {layoutComponentsList.length > 0 && (
-            <div>
+            <div className="content-auto-small">
               <div
                 className="mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 role="heading"
