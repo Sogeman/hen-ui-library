@@ -1,23 +1,30 @@
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    // Initialize from localStorage, or fall back to system preference
+    const stored = localStorage.getItem("theme");
+    if (stored === "dark" || stored === "light") {
+      return stored;
+    }
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark";
+    }
+    return "light";
+  });
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    requestAnimationFrame(() => {
-      if (stored === "dark" || stored === "light") {
-        setTheme(stored);
-        document.documentElement.style.colorScheme = stored;
-      }
-    });
-  }, []);
+    const root = document.documentElement;
+    root.style.colorScheme = theme;
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    document.documentElement.style.colorScheme = newTheme;
   };
 
   return (
