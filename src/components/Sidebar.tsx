@@ -16,7 +16,7 @@ export function Sidebar({ currentPath }: SidebarProps) {
     (item) => item.type === "registry:component"
   );
 
-  const formComponents = ["checkbox", "input", "select", "switch"];
+  const formComponents = ["checkbox", "input", "select", "switch", "textarea"];
   const layoutComponents = ["grid"];
 
   const uiComponents = allComponents

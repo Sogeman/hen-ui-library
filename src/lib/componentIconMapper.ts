@@ -11,6 +11,7 @@ import {
   MenuIcon,
   SelectIcon,
   SwitchIcon,
+  TextareaIcon,
 } from "@/components/ComponentIcons";
 
 const componentIconMap: Record<
@@ -28,6 +29,7 @@ const componentIconMap: Record<
   menu: MenuIcon,
   select: SelectIcon,
   switch: SwitchIcon,
+  textarea: TextareaIcon,
 };
 
 export const getComponentIcon = (componentName: string) => {

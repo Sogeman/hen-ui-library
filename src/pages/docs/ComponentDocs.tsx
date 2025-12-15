@@ -14,6 +14,7 @@ import { inputExample } from "./examples/input";
 import { menuExample } from "./examples/menu";
 import { selectExample } from "./examples/select";
 import { switchExample } from "./examples/switch";
+import { textareaExample } from "./examples/textarea";
 
 interface RegistryItem {
   name: string;
@@ -47,6 +48,7 @@ const componentExamples: Record<string, ComponentExample> = {
   menu: menuExample,
   select: selectExample,
   switch: switchExample,
+  textarea: textareaExample,
 };
 
 function PreviewSection({ example }: { example: ComponentExample }) {

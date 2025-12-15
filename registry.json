@@ -254,6 +254,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:component",
+      "description": "A textarea component with label and error states for multi-line text input",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/textarea/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

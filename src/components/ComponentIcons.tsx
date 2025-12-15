@@ -85,6 +85,12 @@ export const MenuIcon = ({ className = "w-4 h-4" }: IconProps) => (
   </svg>
 );
 
+export const TextareaIcon = ({ className = "w-4 h-4" }: IconProps) => (
+  <svg {...iconProps} className={className}>
+    <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+  </svg>
+);
+
 // Default icon for unknown components
 export const ComponentIcon = ({ className = "w-4 h-4" }: IconProps) => (
   <svg {...iconProps} className={className}>
