@@ -96,6 +96,11 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             className="text-sm font-medium leading-none cursor-pointer peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             {label}
+            {props.required && (
+              <span className="text-destructive ml-0.5" aria-hidden="true">
+                *
+              </span>
+            )}
           </label>
         )}
       </div>

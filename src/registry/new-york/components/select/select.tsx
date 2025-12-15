@@ -31,6 +31,11 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             )}
           >
             {label}
+            {props.required && (
+              <span className="text-destructive ml-0.5" aria-hidden="true">
+                *
+              </span>
+            )}
           </label>
         )}
         <select

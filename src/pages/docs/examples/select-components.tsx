@@ -30,6 +30,7 @@ export function SelectFullPreview() {
           label="Country"
           options={countries}
           placeholder="Select a country"
+          required
         />
       </div>
 
@@ -82,6 +83,7 @@ export function SelectFullPreview() {
           label="With Error"
           options={countries}
           error
+          required
           placeholder="Select a country"
         />
         <p className="text-sm text-destructive">This field is required</p>

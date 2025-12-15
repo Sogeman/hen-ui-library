@@ -8,7 +8,7 @@ export const checkboxExample = {
           Checkbox Variations
         </h3>
         <div className="space-y-3">
-          <Checkbox label="Accept terms and conditions" defaultChecked />
+          <Checkbox label="Accept terms and conditions" defaultChecked required />
           <Checkbox label="Subscribe to newsletter" />
           <Checkbox label="Enable notifications" />
           <Checkbox label="Disabled checkbox" disabled />
@@ -73,6 +73,11 @@ export default function Example() {
       name: "onChange",
       type: "(e: ChangeEvent) => void",
       description: "Change event handler",
+    },
+    {
+      name: "required",
+      type: "boolean",
+      description: "Mark checkbox as required (shows * in label)",
     },
   ],
 };

@@ -32,6 +32,11 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
           >
             {label}
+            {props.required && (
+              <span className="text-destructive ml-0.5" aria-hidden="true">
+                *
+              </span>
+            )}
           </label>
         )}
       </div>

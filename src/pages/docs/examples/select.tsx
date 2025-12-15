@@ -81,5 +81,10 @@ export default function Example() {
       type: "(e: ChangeEvent) => void",
       description: "Change event handler",
     },
+    {
+      name: "required",
+      type: "boolean",
+      description: "Mark field as required (shows * in label)",
+    },
   ],
 };

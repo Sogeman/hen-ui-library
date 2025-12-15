@@ -32,6 +32,7 @@ export function SwitchFullPreview() {
             label="Airplane Mode"
             checked={checked1}
             onChange={(e) => setChecked1(e.target.checked)}
+            required
           />
           <Switch
             label="Enable notifications"

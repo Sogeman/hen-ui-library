@@ -27,6 +27,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             )}
           >
             {label}
+            {props.required && (
+              <span className="text-destructive ml-0.5" aria-hidden="true">
+                *
+              </span>
+            )}
           </label>
         )}
         <input

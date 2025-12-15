@@ -4,10 +4,10 @@ export const inputExample = {
   preview: () => (
     <div className="space-y-4 max-w-md">
       <Input label="Default Input" />
-      <Input label="Email" type="email" />
+      <Input label="Email" type="email" required />
       <Input label="Disabled" disabled />
       <div className="space-y-1">
-        <Input label="With Error" error />
+        <Input label="With Error" error required />
         <p className="text-sm text-destructive">This field is required</p>
       </div>
     </div>
@@ -39,5 +39,6 @@ export default function Example() {
     { name: "placeholder", type: "string", description: "Placeholder text" },
     { name: "disabled", type: "boolean", description: "Disable the input" },
     { name: "error", type: "boolean", description: "Show error state" },
+    { name: "required", type: "boolean", description: "Mark field as required (shows * in label)" },
   ],
 };
