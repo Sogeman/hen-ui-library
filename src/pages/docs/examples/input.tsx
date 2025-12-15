@@ -1,61 +1,36 @@
-import {
-  Input,
-  Label,
-} from "../../../registry/new-york/components/input/input";
+import { Input } from "../../../registry/new-york/components/input/input";
 
 export const inputExample = {
   preview: () => (
     <div className="space-y-4 max-w-md">
-      <div className="space-y-2">
-        <Label htmlFor="default">Default Input</Label>
-        <Input id="default" placeholder="Enter text..." />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" placeholder="email@example.com" />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="disabled">Disabled</Label>
-        <Input id="disabled" disabled placeholder="Disabled input" />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="error">With Error</Label>
-        <Input id="error" error placeholder="Invalid input" />
+      <Input label="Default Input" />
+      <Input label="Email" type="email" />
+      <Input label="Disabled" disabled />
+      <div className="space-y-1">
+        <Input label="With Error" error />
         <p className="text-sm text-destructive">This field is required</p>
       </div>
     </div>
   ),
-  code: `import { Input, Label } from "@/components/input"
+  code: `import { Input } from "@/components/input"
 
 export default function Example() {
   return (
-    <div className="space-y-2">
-      <Label htmlFor="email">Email</Label>
-      <Input 
-        id="email" 
-        type="email" 
-        placeholder="email@example.com" 
-      />
-    </div>
+    <Input 
+      label="Email"
+      type="email" 
+    />
   )
 }`,
-  codePreview: () => (
-    <div className="space-y-2">
-      <Label htmlFor="email">Email</Label>
-      <Input id="email" type="email" placeholder="email@example.com" />
-    </div>
-  ),
-  usage: `<div className="space-y-2">
-  <Label htmlFor="email">Email</Label>
-  <Input id="email" type="email" placeholder="email@example.com" />
-</div>`,
-  usagePreview: () => (
-    <div className="space-y-2">
-      <Label htmlFor="email2">Email</Label>
-      <Input id="email2" type="email" placeholder="email@example.com" />
-    </div>
-  ),
+  codePreview: () => <Input label="Email" type="email" />,
+  usage: `<Input label="Email" type="email" />`,
+  usagePreview: () => <Input label="Email" type="email" />,
   props: [
+    {
+      name: "label",
+      type: "string",
+      description: "Label text displayed above the input",
+    },
     {
       name: "type",
       type: "string",

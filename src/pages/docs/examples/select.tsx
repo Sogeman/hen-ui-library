@@ -3,7 +3,7 @@ import { SelectCodePreview, SelectFullPreview } from "./select-components";
 
 export const selectExample = {
   preview: () => <SelectFullPreview />,
-  code: `import { Select, Label } from "@/components/select"
+  code: `import { Select } from "@/components/select"
 
 export default function Example() {
   const countries = [
@@ -14,18 +14,16 @@ export default function Example() {
   ]
 
   return (
-    <div className="space-y-2 max-w-md">
-      <Label htmlFor="country">Country</Label>
-      <Select
-        id="country"
-        options={countries}
-        placeholder="Select a country"
-      />
-    </div>
+    <Select
+      label="Country"
+      options={countries}
+      placeholder="Select a country"
+    />
   )
 }`,
   codePreview: () => <SelectCodePreview />,
   usage: `<Select
+  label="Choose Option"
   options={[
     { value: "1", label: "Option 1" },
     { value: "2", label: "Option 2" },
@@ -34,6 +32,7 @@ export default function Example() {
 />`,
   usagePreview: () => (
     <Select
+      label="Choose Option"
       options={[
         { value: "1", label: "Option 1" },
         { value: "2", label: "Option 2" },
@@ -42,6 +41,11 @@ export default function Example() {
     />
   ),
   props: [
+    {
+      name: "label",
+      type: "string",
+      description: "Label text displayed above the select",
+    },
     {
       name: "options",
       type: "SelectOption[]",
