@@ -54,7 +54,10 @@ export default function Home() {
             <div className="mt-4 mb-2 text-muted-foreground">
               # Update a single component
             </div>
-            <div>e.g. npx shadcn@latest add button --overwrite</div>
+            <div>
+              e.g. npx shadcn@latest add
+              https://sogeman.github.io/hen-ui-library/r/button.json --overwrite
+            </div>
           </div>
         </Card>
       </div>
