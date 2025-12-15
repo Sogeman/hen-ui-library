@@ -29,9 +29,12 @@ function Avatar({
 
   const showFallback = !src || imageError;
   const fallbackText = fallback || alt?.charAt(0).toUpperCase() || "?";
+  const ariaLabel = alt || `Avatar with initials ${fallbackText}`;
 
   return (
     <div
+      role="img"
+      aria-label={showFallback ? ariaLabel : undefined}
       className={cn(
         "relative flex shrink-0 overflow-hidden rounded-full",
         avatarSizes[size],
@@ -47,7 +50,10 @@ function Avatar({
           className="aspect-square h-full w-full object-cover"
         />
       ) : (
-        <div className="flex h-full w-full items-center justify-center bg-muted font-medium text-muted-foreground">
+        <div
+          className="flex h-full w-full items-center justify-center bg-muted font-medium text-muted-foreground"
+          aria-hidden="true"
+        >
           {fallbackText}
         </div>
       )}

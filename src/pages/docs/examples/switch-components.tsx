@@ -54,7 +54,7 @@ export function SwitchFullPreview() {
         </h3>
         <div className="space-y-3">
           <Switch label="Small" size="sm" defaultChecked />
-          <Switch label="Default" size="default" defaultChecked />
+          <Switch label="Default" size="default" />
           <Switch label="Large" size="lg" defaultChecked />
         </div>
       </div>
