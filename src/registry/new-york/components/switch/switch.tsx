@@ -9,16 +9,16 @@ export interface SwitchProps
 
 const switchSizes = {
   sm: {
-    container: "h-5 w-9",
-    thumb: "h-4 w-4 data-[state=checked]:translate-x-4",
+    container: "h-4 w-8",
+    thumb: "h-3 w-3 data-[state=checked]:translate-x-4",
   },
   default: {
-    container: "h-6 w-11",
-    thumb: "h-5 w-5 data-[state=checked]:translate-x-5",
+    container: "h-5 w-10",
+    thumb: "h-4 w-4 data-[state=checked]:translate-x-5",
   },
   lg: {
-    container: "h-7 w-14",
-    thumb: "h-6 w-6 data-[state=checked]:translate-x-7",
+    container: "h-6 w-12",
+    thumb: "h-5 w-5 data-[state=checked]:translate-x-6",
   },
 };
 
