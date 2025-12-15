@@ -51,6 +51,10 @@ export default function Home() {
               npx shadcn@latest add
               https://ui-library.sogeman.deno.net/r/button.json
             </div>
+            <div className="mt-4 mb-2 text-muted-foreground">
+              # Update a single component
+            </div>
+            <div>e.g. npx shadcn@latest add button --overwrite</div>
           </div>
         </Card>
       </div>
