@@ -12,9 +12,46 @@ export function Sidebar({ currentPath }: SidebarProps) {
   const location = useLocation();
   const activePath = currentPath || location.pathname;
 
-  const components = registryData.items
-    .filter((item) => item.type === "registry:component")
+  const allComponents = registryData.items.filter(
+    (item) => item.type === "registry:component"
+  );
+
+  const formComponents = ["checkbox", "input", "select", "switch"];
+  const layoutComponents = ["grid"];
+
+  const uiComponents = allComponents
+    .filter(
+      (c) =>
+        !formComponents.includes(c.name) && !layoutComponents.includes(c.name)
+    )
     .sort((a, b) => a.name.localeCompare(b.name));
+
+  const formComponentsList = allComponents
+    .filter((c) => formComponents.includes(c.name))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const layoutComponentsList = allComponents
+    .filter((c) => layoutComponents.includes(c.name))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const renderComponentLink = (component: (typeof allComponents)[0]) => {
+    const isActive = activePath === `/docs/${component.name}`;
+    const IconComponent = getComponentIcon(component.name);
+    return (
+      <Link
+        key={component.name}
+        to={`/docs/${component.name}`}
+        className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium capitalize transition-colors ${
+          isActive
+            ? "bg-accent text-accent-foreground"
+            : "text-foreground hover:bg-accent hover:text-accent-foreground"
+        }`}
+      >
+        <IconComponent />
+        {component.name}
+      </Link>
+    );
+  };
 
   return (
     <aside className="w-64 border-r border-border bg-card h-screen sticky top-0 overflow-y-auto">
@@ -72,35 +109,50 @@ export function Sidebar({ currentPath }: SidebarProps) {
             </div>
           </div>
 
-          <div>
-            <div
-              className="mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
-              role="heading"
-              aria-level={2}
-            >
-              Components
+          {uiComponents.length > 0 && (
+            <div className="mb-6">
+              <div
+                className="mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                role="heading"
+                aria-level={2}
+              >
+                UI Components
+              </div>
+              <div className="space-y-1">
+                {uiComponents.map(renderComponentLink)}
+              </div>
             </div>
-            <div className="space-y-1">
-              {components.map((component) => {
-                const isActive = activePath === `/docs/${component.name}`;
-                const IconComponent = getComponentIcon(component.name);
-                return (
-                  <Link
-                    key={component.name}
-                    to={`/docs/${component.name}`}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium capitalize transition-colors ${
-                      isActive
-                        ? "bg-accent text-accent-foreground"
-                        : "text-foreground hover:bg-accent hover:text-accent-foreground"
-                    }`}
-                  >
-                    <IconComponent />
-                    {component.name}
-                  </Link>
-                );
-              })}
+          )}
+
+          {formComponentsList.length > 0 && (
+            <div className="mb-6">
+              <div
+                className="mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                role="heading"
+                aria-level={2}
+              >
+                Form Components
+              </div>
+              <div className="space-y-1">
+                {formComponentsList.map(renderComponentLink)}
+              </div>
             </div>
-          </div>
+          )}
+
+          {layoutComponentsList.length > 0 && (
+            <div>
+              <div
+                className="mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                role="heading"
+                aria-level={2}
+              >
+                Layout
+              </div>
+              <div className="space-y-1">
+                {layoutComponentsList.map(renderComponentLink)}
+              </div>
+            </div>
+          )}
         </nav>
       </div>
     </aside>

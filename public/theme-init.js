@@ -1,8 +1,6 @@
 (function () {
   const stored = localStorage.getItem("theme");
-  if (
-    stored === "dark"
-  ) {
-    document.documentElement.classList.add("dark");
+  if (stored === "dark" || stored === "light") {
+    document.documentElement.style.colorScheme = stored;
   }
 })();

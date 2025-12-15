@@ -165,6 +165,82 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:component",
+      "description": "Display alert messages with different variants for info, success, warning, and errors",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/alert/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert.tsx"
+        },
+        {
+          "path": "src/registry/new-york/components/alert/components/alert-title.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert/components/alert-title.tsx"
+        },
+        {
+          "path": "src/registry/new-york/components/alert/components/alert-description.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert/components/alert-description.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "description": "A checkbox input component with optional label support",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/checkbox/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "description": "A toggle switch component for on/off states with multiple sizes",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/switch/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:component",
+      "description": "Display user avatars with image support and fallback to initials",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/avatar/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "description": "A dropdown select component for choosing from a list of options",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/select/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

@@ -25,7 +25,6 @@ export const GridIcon = ({ className = "w-4 h-4" }: IconProps) => (
   </svg>
 );
 
-// Component-specific icons
 export const BadgeIcon = ({ className = "w-4 h-4" }: IconProps) => (
   <svg {...iconProps} className={className}>
     <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -47,6 +46,36 @@ export const CardIcon = ({ className = "w-4 h-4" }: IconProps) => (
 export const InputIcon = ({ className = "w-4 h-4" }: IconProps) => (
   <svg {...iconProps} className={className}>
     <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+  </svg>
+);
+
+export const AlertIcon = ({ className = "w-4 h-4" }: IconProps) => (
+  <svg {...iconProps} className={className}>
+    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+  </svg>
+);
+
+export const CheckboxIcon = ({ className = "w-4 h-4" }: IconProps) => (
+  <svg {...iconProps} className={className}>
+    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+);
+
+export const SwitchIcon = ({ className = "w-4 h-4" }: IconProps) => (
+  <svg {...iconProps} className={className}>
+    <path d="M8 7h12m0 0a3 3 0 110 6H8m12-6v6m-12 0a3 3 0 110-6" />
+  </svg>
+);
+
+export const AvatarIcon = ({ className = "w-4 h-4" }: IconProps) => (
+  <svg {...iconProps} className={className}>
+    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+  </svg>
+);
+
+export const SelectIcon = ({ className = "w-4 h-4" }: IconProps) => (
+  <svg {...iconProps} className={className}>
+    <path d="M4 6h16M4 12h16M4 18h7" />
   </svg>
 );
 
