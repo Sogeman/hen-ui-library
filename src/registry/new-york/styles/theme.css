@@ -59,7 +59,7 @@
     oklch(0.704 0.191 22.216)
   );
   --border: light-dark(oklch(0.922 0 0), oklch(1 0 0 / 10%));
-  --input: light-dark(oklch(0.922 0 0), oklch(1 0 0 / 15%));
+  --input: light-dark(oklch(0.922 0 0), oklch(1 0 0 / 25%));
   --ring: light-dark(oklch(0.606 0.215 196.119), oklch(0.556 0 0));
   --chart-1: light-dark(oklch(0.646 0.222 41.116), oklch(0.488 0.243 264.376));
   --chart-2: light-dark(oklch(0.6 0.118 184.704), oklch(0.696 0.17 162.48));
