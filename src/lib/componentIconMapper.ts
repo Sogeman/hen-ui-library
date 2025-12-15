@@ -8,6 +8,7 @@ import {
   ComponentIcon,
   GridIcon,
   InputIcon,
+  MenuIcon,
   SelectIcon,
   SwitchIcon,
 } from "@/components/ComponentIcons";
@@ -24,6 +25,7 @@ const componentIconMap: Record<
   checkbox: CheckboxIcon,
   grid: GridIcon,
   input: InputIcon,
+  menu: MenuIcon,
   select: SelectIcon,
   switch: SwitchIcon,
 };

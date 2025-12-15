@@ -11,6 +11,7 @@ import { cardExample } from "./examples/card";
 import { checkboxExample } from "./examples/checkbox";
 import { gridExample } from "./examples/grid";
 import { inputExample } from "./examples/input";
+import { menuExample } from "./examples/menu";
 import { selectExample } from "./examples/select";
 import { switchExample } from "./examples/switch";
 
@@ -43,6 +44,7 @@ const componentExamples: Record<string, ComponentExample> = {
   checkbox: checkboxExample,
   grid: gridExample,
   input: inputExample,
+  menu: menuExample,
   select: selectExample,
   switch: switchExample,
 };

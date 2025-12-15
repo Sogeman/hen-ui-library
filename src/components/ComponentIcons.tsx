@@ -79,6 +79,12 @@ export const SelectIcon = ({ className = "w-4 h-4" }: IconProps) => (
   </svg>
 );
 
+export const MenuIcon = ({ className = "w-4 h-4" }: IconProps) => (
+  <svg {...iconProps} className={className}>
+    <path d="M4 6h16M4 12h16m-7 6h7" />
+  </svg>
+);
+
 // Default icon for unknown components
 export const ComponentIcon = ({ className = "w-4 h-4" }: IconProps) => (
   <svg {...iconProps} className={className}>

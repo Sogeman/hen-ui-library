@@ -241,6 +241,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:component",
+      "description": "A dropdown menu component with customizable positioning and items",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/menu/menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
